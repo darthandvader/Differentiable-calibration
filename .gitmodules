@@ -1,0 +1,3 @@
+[submodule "submodules/hunyuan3d"]
+	path = submodules/hunyuan3d
+	url = https://github.com/Tencent/Hunyuan3D-2.git
