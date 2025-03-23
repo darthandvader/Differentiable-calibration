@@ -6,7 +6,12 @@ import skfmm
 import torch.nn.functional as F
 import math
 
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+
 from diffcali.eval_dvrk.LND_fk import lndFK
+from diffcali.utils.projection_utils import *
 from diffcali.utils.cylinder_projection_utils import (
     projectCylinderTorch,
     transform_points_b,

@@ -2,6 +2,10 @@ import argparse
 import numpy as np
 import torch as th
 
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+
 from diffcali.models.CtRNet import CtRNet
 from diffcali.eval_dvrk.optimize import Optimize
 

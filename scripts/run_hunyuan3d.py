@@ -1,6 +1,9 @@
 import argparse
 from hy3dgen.shapegen import Hunyuan3DDiTFlowMatchingPipeline
 
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 def main(image_path, save_path):
     pipeline = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained("tencent/Hunyuan3D-2")

@@ -2,6 +2,10 @@ import torch
 import kornia
 import numpy as np
 
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+
 from diffcali.models.mesh_renderer import RobotMeshRenderer
 
 
@@ -116,7 +120,7 @@ class CtRNet(torch.nn.Module):
         # print(f"check rotation_matrix {rotation_matrix.shape}")
 
         # Convert rotation matrix to angle-axis representation
-        angle_axis = kornia.geometry.conversions.rotation_matrix_to_axis_angle(
+        angle_axis = kornia.geometry.conversions.rotation_matrix_to_angle_axis(
             rotation_matrix
         )
 

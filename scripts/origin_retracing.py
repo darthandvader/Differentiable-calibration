@@ -4,9 +4,12 @@ import torch as th
 import os
 import cv2
 
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from diffcali.models.CtRNet import CtRNet
-from diffcali.utils.ui_utils import get_reference_keypoints
+from diffcali.utils.ui_utils import *
 from diffcali.utils.detection_utils import detect_lines
 from diffcali.eval_dvrk.batch_optimize import BatchOptimize  # The class we just wrote
 from diffcali.eval_dvrk.optimize import Optimize  # Your single-sample class
@@ -161,7 +164,8 @@ def main():
 
         # TODO: Change this into auto detection & process several frames together to get the RCM. Measure the deviation etc.
 
-        ref_keypoints = get_reference_keypoints(ref_img, num_keypoints=2)
+        # ref_keypoints = get_reference_keypoints(ref_img, num_keypoints=2)
+        ref_keypoints =  get_reference_keypoints_auto(args.ref_img_file, num_keypoints=2)
         print(f"detect keypoints shape {ref_keypoints}")
 
         """define ref_keypoints (auto detection)"""

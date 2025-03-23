@@ -5,6 +5,10 @@ import skfmm
 from scipy.spatial.distance import directed_hausdorff
 import torch.nn.functional as F
 
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+
 from diffcali.models.mark_kp import lndFK, get_img_coords
 from diffcali.utils.cylinder_projection_utils import (
     projectCylinderTorch,

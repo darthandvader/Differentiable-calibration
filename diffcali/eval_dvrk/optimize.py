@@ -7,6 +7,10 @@ from tqdm import tqdm
 import skfmm
 from scipy.spatial.distance import directed_hausdorff
 
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+
 from diffcali.eval_dvrk.LND_fk import lndFK
 from diffcali.models.mark_kp import get_img_coords
 import diffcali.eval_dvrk.plot_utils as plot_utils
